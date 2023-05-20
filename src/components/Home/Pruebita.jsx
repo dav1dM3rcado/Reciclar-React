@@ -2,6 +2,7 @@ import eco from "../img/ecovidrio-bg-inv.jpg";
 import Map from "../pages/Map";
 
 
+
 function Pruebita() {
   return (
     <div className="shadow-lg">
@@ -24,7 +25,6 @@ function Pruebita() {
         </div>
       </div>
         <Map/>
-      
     </div>
   );
 }
