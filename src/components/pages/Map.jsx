@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Map = () => {
   useEffect(() => {
@@ -27,6 +27,10 @@ const Map = () => {
                   lat: position.coords.latitude,
                   lng: position.coords.longitude,
               };
+<<<<<<< HEAD
+=======
+              console.log(userLocation)
+>>>>>>> 62287f75ca4533183214efabab34a8d6b4aeca54
               // Crear un marcador para la ubicación del usuario
               var userMarker = new google.maps.Marker({
                   position: userLocation,

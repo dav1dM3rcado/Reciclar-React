@@ -2,6 +2,7 @@ import eco from "../img/ecovidrio-bg-inv.jpg";
 import Map from "../pages/Map";
 
 
+
 function Pruebita() {
   return (
     <section className="shadow-lg">
@@ -21,6 +22,10 @@ function Pruebita() {
           </a>
         </div>
       </div>
+<<<<<<< HEAD
+=======
+        <Map/>
+>>>>>>> 62287f75ca4533183214efabab34a8d6b4aeca54
     </div>
     <Map/>
   </section>
