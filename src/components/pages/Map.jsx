@@ -146,7 +146,10 @@ const Map = () => {
     }
   }, []);
 
-  return <div id="map" style={{ height: '400px' }}></div>;
+  return (
+  <div id="map" style={{ height: '400px' }}></div>,
+  <button id="button">Punto Ecologico mas cercano</button>
+  )
 };
 
 export default Map;
