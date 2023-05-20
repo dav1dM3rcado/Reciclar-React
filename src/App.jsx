@@ -1,13 +1,14 @@
-import Pichila from "./components/Pichila";
+import Heder from "./components/layout/Heder";
 import Pruebita from "./components/Home/pruebita";
 import Footer from "./components/layout/Footer";
 
 function App() {
   return (
     <>
-      <Pichila />
+       <Heder/>
       <Pruebita />
       <Footer/>
+
     </>
   );
 }
