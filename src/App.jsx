@@ -4,11 +4,11 @@ import Footer from "./components/layout/Footer";
 //import Eror from "./components/pages/Eror";
 import Contac from "./components/pages/Contac";
 
+
 function App() {
   return (
     <>
        <Heder/>
-       
       <Pruebita />
       <Contac/>
       <Footer/>

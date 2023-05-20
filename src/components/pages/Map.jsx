@@ -145,7 +145,7 @@ const Map = () => {
     }
   }, []);
 
-  return <div id="map" style={{ height: '400px' }}></div>;
+  return <div id="map" style={{ height: '400px', width: "100px" }}></div>;
 };
 
 export default Map;
