@@ -1,0 +1,29 @@
+version: 2
+jobs:
+  build:
+    machine: true
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "	60:45:55:ca:69:f4:de:39:ed:26:48:27:52:bf:e8:ec"
+      - checkout
+      - run:
+          name: Set NODE_NO_WARNINGS variable
+          command: export NODE_NO_WARNINGS=1
+      - run: docker login -u $DOCKER_USER -p $DOCKER_PASS
+      - run: 
+          name: Build Docker image
+          command: docker build -t $DOCKER_USER/pruebit22:$CIRCLE_SHA1 .
+      - run: 
+          name: Push Docker image
+          command: docker push $DOCKER_USER/pruebit22:$CIRCLE_SHA1
+      - run:
+          name: Stop and remove any existing container
+          command: 
+            ssh -o StrictHostKeyChecking=no -t -t azureuser@172.177.127.49 "sudo docker stop martine22 || true"
+            ssh -o StrictHostKeyChecking=no -t -t azureuser@172.177.127.49 "sudo docker rm martine22 || true"
+      - run:
+          name: run container
+          command: 
+            ssh -o StrictHostKeyChecking=no -t -t "sudo docker run -p 8081:80 -d --name martine22 $DOCKER_USER/pruebit22:$CIRCLE_SHA1 "
+
