@@ -14,15 +14,12 @@ RUN npm install
 COPY . /app
 
 
-# Mostrar el contenido del directorio /app (para depuración)
-RUN npm run build
-
 
 # Construye la aplicación React
 RUN npm run build
 
 # Utiliza una imagen base ligera de Nginx para servir la aplicación construida
-FROM nginx:alpine
+FROM nginx
 
 # Copia los archivos de construcción de la aplicación en la ubicación adecuada del servidor Nginx
 COPY --from=builder /app/dist /usr/share/nginx/html
