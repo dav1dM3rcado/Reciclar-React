@@ -25,5 +25,5 @@ jobs:
       - run:
           name: run container
           command: 
-            ssh -o StrictHostKeyChecking=no -t -t "sudo docker run -p 8081:80 -d --name martine22 $DOCKER_USER/pruebit22:$CIRCLE_SHA1 "
+            ssh -o StrictHostKeyChecking=no -t -t  azureuser@172.177.127.49 "sudo docker run -p 8081:80 -d --name martine22 $DOCKER_USER/pruebit22:$CIRCLE_SHA1 "
 
